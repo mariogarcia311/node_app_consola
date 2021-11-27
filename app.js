@@ -1,7 +1,7 @@
 // const { mostrarMenu, pausa } = require('./helpers/mensajes');
 
 const guardarDB = require('./helpers/guardarArchivos');
-const { inquirerMenu, pausa, leerInput, confirmar, listadoTareasBorrar
+const { inquirerMenu, pausa, leerInput, confirmar, listadoTareasBorrar, mostrarListadoChecklist
 } = require('./helpers/inquirer');
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
@@ -60,7 +60,7 @@ const main=async()=>{
                 }
             break;
         }
-        // guardarDB( tareas.listadoArr );
+        guardarDB.guardarDB( tareas.listadoArr );
         await pausa()
     }while(opt!=='0');
     
